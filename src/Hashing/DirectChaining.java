@@ -43,4 +43,31 @@ public class DirectChaining {
         }
     }
 
+    // ------------ Search and Delete functions using direct chaining for HT
+
+    public boolean searchHashTable(String word){
+        int newIndex = modASCIIHashFunction(word, hashTable.length); //first we need to find the index of the string in parameter
+        //based on the index we will check if string exist in HT
+        if(hashTable[newIndex] != null && hashTable[newIndex].contains(word)){ //check that the computed index is not in HT and that computed index has the word we want
+            System.out.println("\n" + "\"" + word + "\"" + " found in HT at location: "+ newIndex );
+            return true;
+        } else {
+            System.out.println("\n" + "\"" + word + "\"" + " not found in HT" );
+            return false;
+        }
+    }
+
+    public void deleteKeyHashTable(String word){
+        int newIndex = modASCIIHashFunction(word, hashTable.length);
+        //check if it exist
+        boolean result = searchHashTable(word);
+        if (result == true){
+            hashTable[newIndex].remove(word);
+            System.out.println("\n" + "\"" + word + "\"" + " has been deleted from HT");
+        } else {
+            System.out.println("value doesnt exist");
+        }
+    }
+
+
 }
