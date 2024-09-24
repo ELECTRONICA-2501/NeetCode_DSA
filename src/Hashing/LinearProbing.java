@@ -1,5 +1,6 @@
 package Hashing;
 import java.util.ArrayList;
+
 import Hashing.DirectChaining;
 public class LinearProbing {
     String[] hashTable;
@@ -32,7 +33,7 @@ public class LinearProbing {
             }
             data.add(word);
             hashTable = new String[hashTable.length * 2];
-            for (String s : data){
+            for (String d : data){
                 if(s != null){
                     data.add(s);
                 }

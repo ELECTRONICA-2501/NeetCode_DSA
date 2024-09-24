@@ -140,7 +140,7 @@ singlyLinkedList.tail.value // 15*/
         head = prevNode.next; // the head now points at the last node
         tail = prevNode; //tail now is the prevNode
         prevNode.next = null;
-        return "success"
+        return "success";
 
     }
 }
